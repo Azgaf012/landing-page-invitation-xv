@@ -1,0 +1,355 @@
+/* ==== PALETA & RESET ==== */
+:root {
+  --gold:       #d8b56a;
+  --olive:      #bfc8a4;
+  --olive-dark: #6c7459;
+  --txt-dark:   #2e2e2e;
+}
+* { box-sizing:border-box; margin:0; padding:0; }
+html, body { height:100%; font-family:"Poppins",sans-serif; color:var(--txt-dark); }
+body { overflow:hidden; }
+
+/* ==== CONTENEDOR PRINCIPAL ==== */
+main#container {
+  height:100%; overflow-y:auto;
+  scroll-snap-type: y mandatory; scroll-behavior: smooth;
+}
+
+/* ==== SECCIONES ==== */
+section {
+  min-height:100vh;
+  display:flex; flex-direction:column;
+  justify-content:center; align-items:center;
+  scroll-snap-align:start; scroll-snap-stop:always;
+}
+.sec-content {
+  width:100%; max-width:900px;
+  padding:2rem 1.5rem;
+}
+
+/* ==== HERO ==== */
+#hero {
+  position: relative;
+  width:100%;
+  background: url("assets/astrid-fondo.jpg") center/cover no-repeat;
+  background-attachment: scroll;
+}
+#hero::before {
+  content:"";
+  position:absolute; inset:0;
+  background: rgba(0,0,0,0.75);
+  z-index:0;
+}
+#hero .sec-content {
+  position:relative; z-index:1;
+  padding:0;
+  display:flex; flex-direction:column;
+  justify-content:center; align-items:center;
+  text-align:center;
+}
+#hero h2, #hero h1 {
+  color:#fff;
+  text-shadow:0 4px 12px rgba(0,0,0,0.8);
+}
+#hero h2 {
+  font-family:"Poppins",sans-serif;
+  font-size: clamp(1rem,2.5vw,2rem);
+  letter-spacing:.3em;
+  text-transform:uppercase;
+  margin-bottom:.5rem;
+}
+#hero h1 {
+  font-family:"Libre Baskerville",serif;
+  font-size: clamp(3rem,6vw,6rem);
+  line-height:1.1; margin:0;
+}
+#hero .scroll-down {
+  width:36px; height:36px;
+  border-left:4px solid #fff;
+  border-bottom:4px solid #fff;
+  transform:rotate(-45deg);
+  margin-top:2.5rem;
+  animation:bounce 2s infinite;
+}
+@keyframes bounce {
+  0%,20%,50%,80%,100%{transform:translateY(0) rotate(-45deg);}
+  40%{transform:translateY(10px) rotate(-45deg);}
+  60%{transform:translateY(5px) rotate(-45deg);}
+}
+
+/* ==== COUNTDOWN ==== */
+#countdown {
+  background: var(--olive-dark);
+  color: #fff;
+}
+#countdown h2 {
+  font-family:"Libre Baskerville",serif;
+  font-size: clamp(2rem,4vw,2.75rem);
+  color: var(--gold);
+  margin-bottom: 1.5rem;
+}
+.timer {
+  display:flex; gap:2rem; flex-wrap:wrap; justify-content:center;
+}
+.time-seg {
+  min-width:80px; text-align:center;
+}
+.time-seg span {
+  font-size: clamp(2.5rem,6vw,4rem);
+  font-weight:600;
+}
+.time-seg small {
+  font-size:.8rem;
+  text-transform:uppercase;
+  letter-spacing:.05em;
+}
+
+/* ==== STORY ==== */
+#story {
+  background: linear-gradient(
+    135deg,
+    var(--olive) 0%,
+    rgba(255,255,255,0.6) 35%,
+    rgba(255,255,255,0.6) 65%,
+    var(--olive) 100%
+  );
+}
+#story .sec-content {
+  display:flex; flex-direction:column;
+  justify-content:center; align-items:center;
+  text-align:center;
+}
+#story .story-title {
+  font-family:"Libre Baskerville",serif;
+  font-size: clamp(2.5rem,5vw,3.5rem);
+  color:var(--txt-dark);
+  margin-bottom:1.5rem;
+}
+#story .story-text {
+  max-width:700px;
+  line-height:1.8;
+  font-weight:300;
+}
+
+/* ==== FAMILY ==== */
+#family {
+  background:#fff;
+}
+.family-inner h2 {
+  font-family:"Libre Baskerville",serif;
+  font-size: clamp(2.5rem,5vw,3rem);
+  color: var(--gold);
+  margin-bottom:1rem;
+}
+.family-list {
+  display:flex; gap:2rem; flex-wrap:wrap; justify-content:center;
+}
+.family-group {
+  flex:1; min-width:200px;
+}
+.family-group h3 {
+  font-family:"Cormorant Garamond",serif;
+  font-size: clamp(1.5rem,3vw,2rem);
+  color: var(--olive-dark);
+  margin-bottom:.5rem;
+}
+.family-group p {
+  font-size: clamp(1rem,2.3vw,1.125rem);
+  line-height:1.5;
+}
+
+/* ==== SECCIÓN 5 MEJORADA ==== */
+#event-details {
+  background: var(--olive);
+  color: #fff;
+}
+.event-inner h2 {
+  color: var(--gold);
+  text-shadow: 0 2px 2px rgba(0, 0, 0, 0.3);
+  font-family: "Libre Baskerville", serif;
+  font-size: clamp(2.5rem, 5vw, 3rem);
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+/* Contenedor de dos cards */
+.event-cards {
+  display: flex;
+  gap: 2rem;
+  justify-content: center;
+  align-items: stretch;
+  flex-wrap: wrap;
+}
+
+/* Card base */
+.event-card {
+  flex: 1;
+  max-width: 480px;
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 16px;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.event-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 32px rgba(57, 56, 56, 0.15);
+}
+
+/* Fecha + Hora apiladas */
+.event-card > i,
+.event-card > .value,
+.event-card > .label {
+  color: #fff;
+  text-shadow: 0 2px 4px rgba(0,0,0,0.4);
+}
+.event-card i {
+  font-size: 2.5rem;
+  margin: 1rem 0 0.5rem;
+  
+}
+.event-card .value {
+  font-size: clamp(1.75rem, 4vw, 2rem);
+  font-weight: 600;
+  margin-bottom: 0.25rem;
+}
+.event-card .label {
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 1rem;
+}
+
+/* Botón y mapa */
+.location-card .btn-map {
+  padding: 0.5rem 1rem;
+  border: 2px solid var(--gold);
+  color: var(--gold);
+  text-decoration: none;
+  border-radius: 6px;
+  margin-bottom: 1rem;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+.location-card .btn-map:hover {
+  background: var(--gold);
+  color: #fff;
+}
+.map-container {
+  width: 100%;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+.map-container iframe {
+  width: 100%;
+  height: 200px;
+  border: 0;
+}
+
+/* ==== RESPONSIVE ==== */
+@media (max-width: 768px) {
+  .event-cards {
+    flex-direction: column;
+  }
+  .event-card {
+    max-width: 100%;
+  }
+  .map-container iframe {
+    height: 150px;
+  }
+}
+
+
+/* ==== Responsive (móvil) ==== */
+@media (max-width: 768px) {
+  .event-cards {
+    flex-direction: column;
+  }
+  .event-card {
+    max-width: 100%;
+  }
+  .location-card .map-container iframe {
+    height: 150px;
+  }
+}
+
+
+/* ===== SECCIÓN 14 – FOOTER ===== */
+#footer {
+  background: var(--olive-dark);
+  color: #fff;
+}
+
+.footer-inner {
+  max-width: 900px;
+  width: 100%;
+  padding: 2rem 1.5rem;
+  text-align: center;
+}
+
+.hashtag {
+  font-family: "Cormorant Garamond", serif;
+  font-size: clamp(1.5rem, 4vw, 2rem);
+  color: var(--gold);
+  margin-bottom: 1rem;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+}
+
+.social-icons {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.social-icons a {
+  color: #fff;
+  font-size: 1.75rem;
+  transition: color 0.3s ease;
+}
+
+.social-icons a:hover {
+  color: var(--gold);
+}
+
+.credits {
+  font-size: 0.875rem;
+  color: rgba(255, 255, 255, 0.8);
+  margin-top: 0.5rem;
+}
+
+.music-toggle {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 50px;
+  height: 50px;
+  background-color: #333;   /* color de fondo oscuro */
+  color: #fff;             /* color del icono en blanco */
+  border: none;
+  border-radius: 50%;      /* forma circular :contentReference[oaicite:3]{index=3} */
+  box-shadow: 0 0 8px rgba(0,0,0,0.3);  /* sombra para destacarlo */
+  cursor: pointer;
+  z-index: 9999;           /* asegurarse de que quede al frente */
+  
+  /* centrar el ícono dentro del botón */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.music-toggle i {
+  font-size: 1.5em;
+}
+
+
+/* ==== RESPONSIVE ==== */
+@media (max-width:768px) {
+  .sec-content { padding:1.5rem; }
+  .timer { gap:1rem; }
+  .event-cards { flex-direction: column; }
+  .location-card iframe { height:150px; }
+}

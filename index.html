@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Mis 15 Años | Astrid</title>
+
+    <!-- Google Fonts & Bootstrap Icons -->
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;700&family=Poppins:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css"
+    />
+
+    <!-- Estilos -->
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main id="container">
+      <!-- 1. HERO -->
+      <section id="hero">
+        <div class="sec-content hero-content">
+          <h2>MIS 15 AÑOS</h2>
+          <h1>
+            Astrid<br />
+            Álvarez Sotelo
+          </h1>
+          <div class="scroll-down"></div>
+        </div>
+      </section>
+
+      <!-- 2. COUNTDOWN -->
+      <section id="countdown">
+        <div class="sec-content">
+          <h2>Faltan</h2>
+          <div class="timer">
+            <div class="time-seg">
+              <span id="days">00</span><small>Días</small>
+            </div>
+            <div class="time-seg">
+              <span id="hours">00</span><small>Horas</small>
+            </div>
+            <div class="time-seg">
+              <span id="minutes">00</span><small>Min</small>
+            </div>
+            <div class="time-seg">
+              <span id="seconds">00</span><small>Seg</small>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 3. STORY -->
+      <section id="story">
+        <div class="sec-content story-inner">
+          <h2 class="story-title">Mis 15 Años</h2>
+          <p class="story-text">
+            Con la bendición de Dios y el amor que mis padres me han brindado,
+            me siento feliz de llegar a este momento de mi vida, el día en que
+            dejaré atrás mi infancia y comenzaré un nuevo viaje.
+            <br /><br />
+            Mi mayor deseo es compartir esta celebración con las personas que
+            siempre han estado para mí. ¡Tú eres una de ellas!
+          </p>
+        </div>
+      </section>
+
+      <!-- 4. FAMILY -->
+      <section id="family">
+        <div class="sec-content family-inner">
+          <h2>Con la compañía de</h2>
+          <div class="family-list">
+            <div class="family-group">
+              <h3>Mis Padres:</h3>
+              <p>
+                María Elizabeth Sotelo Saavedra<br />Anthony Paolo Alvarez Díaz
+              </p>
+            </div>
+            <div class="family-group">
+              <h3>Mis Padrinos:</h3>
+              <p>
+                Sabrina Liliana Sotelo Solar<br />Elvis Daniel Sotelo Saavedra
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- SECCIÓN 5 – DETALLES DEL EVENTO -->
+      <section id="event-details">
+        <div class="sec-content event-inner">
+          <h2>Detalles del Evento</h2>
+          <div class="event-cards">
+            <!-- Card única con fecha + hora apiladas -->
+            <div class="event-card">
+              <i class="bi bi-calendar4"></i>
+              <p class="value">03/05/2025</p>
+              <small class="label">Fecha</small>
+
+              <i class="bi bi-clock-history"></i>
+              <p class="value">7:00 PM</p>
+              <small class="label">Hora</small>
+            </div>
+
+            <!-- Card de Ubicación + Mapa -->
+            <div class="event-card">
+              <i class="bi bi-geo-alt"></i>
+              <p class="value">El Sarco, Trujillo</p>
+              <small class="label">Ubicación</small>
+              <a
+                href="https://www.google.com/maps/place/El+Sarco/@-8.0917606,-79.0846765,17z"
+                target="_blank"
+                class="btn-map"
+              >
+                Ver en Maps
+              </a>
+              <div class="map-container">
+                <!-- Sustituye este `src` por el que te da Google al pulsar "Insertar mapa" -->
+                <iframe
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3933.7329!2d-79.0846765!3d-8.0917606!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x91ad3c3eb623058b%3A0x6197460e2bb69362!2sEl+Sarco!5e0!3m2!1ses!2spe!4v1713478023678!5m2!1ses!2spe"
+                  loading="lazy"
+                  allowfullscreen
+                  referrerpolicy="no-referrer-when-downgrade"
+                ></iframe>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- SECCIÓN 14 – FOOTER -->
+      <section id="footer">
+        <div class="sec-content footer-inner">
+          <p class="hashtag">#AstridXV</p>
+          <div class="social-icons">
+            <a
+              href="https://www.instagram.com/"
+              target="_blank"
+              aria-label="Instagram"
+            >
+              <i class="bi bi-instagram"></i>
+            </a>
+            <a
+              href="https://www.facebook.com/"
+              target="_blank"
+              aria-label="Facebook"
+            >
+              <i class="bi bi-facebook"></i>
+            </a>
+            <a
+              href="https://www.whatsapp.com/"
+              target="_blank"
+              aria-label="WhatsApp"
+            >
+              <i class="bi bi-whatsapp"></i>
+            </a>
+          </div>
+          <p class="credits">
+            © 2025 Astrid Álvarez Sotelo. Todos los derechos reservados.
+          </p>
+        </div>
+      </section>
+    </main>
+
+    <!-- 11. MUSIC CONTROL -->
+    <audio id="bg-music" src="assets/yourebeautiful.mp3" loop autoplay></audio>
+    <button id="music-toggle" class="music-toggle" type="button">
+      <i class="bi bi-volume-up-fill"></i>
+    </button>
+
+    <!-- Scripts -->
+    <script>
+      // — Contador regresivo —
+      (function () {
+        const goal = new Date("2025-05-03T19:00:00"),
+          ids = ["days", "hours", "minutes", "seconds"],
+          pad = (v) => String(v).padStart(2, "0");
+        function tick() {
+          const diff = goal - Date.now();
+          let d = 0,
+            h = 0,
+            m = 0,
+            s = 0;
+          if (diff > 0) {
+            s = Math.floor(diff / 1e3) % 60;
+            m = Math.floor(diff / 6e4) % 60;
+            h = Math.floor(diff / 3.6e6) % 24;
+            d = Math.floor(diff / 8.64e7);
+          } else clearInterval(int);
+          [d, h, m, s].forEach(
+            (v, i) => (document.getElementById(ids[i]).textContent = pad(v))
+          );
+        }
+        tick();
+        const int = setInterval(tick, 1000);
+      })();
+
+      // — Scroll‐snap auto al dejar de hacer scroll —
+      (function () {
+        const c = document.getElementById("container"),
+          secs = Array.from(c.querySelectorAll("section"));
+        c.addEventListener("scroll", () => {
+          clearTimeout(c._t);
+          c._t = setTimeout(() => {
+            const pos = c.scrollTop;
+            const tgt = secs.reduce((p, s) =>
+              Math.abs(s.offsetTop - pos) < Math.abs(p.offsetTop - pos) ? s : p
+            );
+            tgt.scrollIntoView({ behavior: "smooth" });
+          }, 80);
+        });
+      })();
+
+      // — Control de música —
+      const bgMusic = document.getElementById("bg-music");
+      const toggleBtn = document.getElementById("music-toggle");
+      const icon = toggleBtn.querySelector("i");
+
+      // Alternar sonido al hacer clic en el botón
+      toggleBtn.addEventListener("click", () => {
+        if (bgMusic.paused) {
+          // Si la música no ha comenzado (por ejemplo, navegadores que bloquean autoplay), iniciarla con sonido
+          bgMusic.muted = false;
+          bgMusic.play();
+          icon.classList.remove("bi-volume-mute-fill");
+          icon.classList.add("bi-volume-up-fill");
+        } else if (bgMusic.muted) {
+          // Si actualmente está silenciado, activar el sonido
+          bgMusic.muted = false;
+          icon.classList.remove("bi-volume-mute-fill");
+          icon.classList.add("bi-volume-up-fill");
+        } else {
+          // Si actualmente suena, silenciarlo
+          bgMusic.muted = true;
+          icon.classList.remove("bi-volume-up-fill");
+          icon.classList.add("bi-volume-mute-fill");
+        }
+      });
+    </script>
+  </body>
+</html>
