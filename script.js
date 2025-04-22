@@ -91,4 +91,27 @@
       musicToggle.textContent = bgMusic.muted ? '🔇' : '🔊';
     });
   }
-})();
+
+  // Al cargar, intenta autoplay en 2s; si falla, desbloquea al primer clic
+  window.addEventListener('load', () => {
+    setTimeout(() => {
+      if (bgMusic) {
+        bgMusic.muted = false;
+        bgMusic.play()
+          .then(() => musicToggle && (musicToggle.textContent = '🔊'))
+          .catch(() => {
+            document.addEventListener('click', unlockAudio, { once: true });
+          });
+      }
+    }, 2000);
+  });
+
+  // Desmuta y reproduce al primer clic si el autoplay fue bloqueado
+  function unlockAudio() {
+    if (!bgMusic) return;
+    bgMusic.muted = false;
+    bgMusic.play().catch(() => {});
+    if (musicToggle) musicToggle.textContent = '🔊';
+  }
+
+})();  // Fin IIFE
