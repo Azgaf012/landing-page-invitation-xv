@@ -87,6 +87,7 @@
     musicToggle.textContent = bgMusic.muted ? '🔇' : '🔊';
     musicToggle.addEventListener('click', () => {
       bgMusic.muted = !bgMusic.muted;
+      if (!bgMusic.muted) bgMusic.play();
       musicToggle.textContent = bgMusic.muted ? '🔇' : '🔊';
     });
   }
