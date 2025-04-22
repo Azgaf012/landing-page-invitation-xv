@@ -2,244 +2,895 @@
 <html lang="es">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width,initial-scale=1" />
-    <title>Mis 15 Años | Astrid</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Invitación Quinceañera | Astrid</title>
 
-    <!-- Google Fonts & Bootstrap Icons -->
-    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <!-- Google Fonts -->
     <link
-      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;700&family=Poppins:wght@300;400;500;600&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&family=Poppins:wght@300;400;600&display=swap"
       rel="stylesheet"
     />
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css"
-    />
 
-    <!-- Estilos -->
+    <!-- Tailwind CSS (CDN para prototipo) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              dancing: ['"Dancing Script"', "cursive"],
+              poppins: ["Poppins", "sans-serif"],
+            },
+          },
+        },
+      };
+    </script>
+
+    <!-- Estilos personalizados -->
     <link rel="stylesheet" href="styles.css" />
   </head>
-  <body>
-    <main id="container">
-      <!-- 1. HERO -->
-      <section id="hero">
-        <div class="sec-content hero-content">
-          <h2>MIS 15 AÑOS</h2>
-          <h1>
-            Astrid<br />
-            Álvarez Sotelo
-          </h1>
-          <div class="scroll-down"></div>
-        </div>
-      </section>
+  <body
+    class="antialiased text-white bg-gray-900 overflow-y-scroll overflow-x-hidden w-full"
+  >
+    <!-- Hero -->
+    <header
+      id="hero"
+      role="banner"
+      class="relative min-h-screen w-full flex items-center justify-center text-center bg-cover bg-center snap-start"
+      style="background-image: url('/images/fondo-astrid.jpg')"
+    >
+      <div class="absolute inset-0 bg-black opacity-60"></div>
+      <div
+        class="absolute inset-0 bg-yellow-300 opacity-10 animate-pulse-slow mix-blend-screen"
+      ></div>
 
-      <!-- 2. COUNTDOWN -->
-      <section id="countdown">
-        <div class="sec-content">
-          <h2>Faltan</h2>
-          <div class="timer">
-            <div class="time-seg">
-              <span id="days">00</span><small>Días</small>
-            </div>
-            <div class="time-seg">
-              <span id="hours">00</span><small>Horas</small>
-            </div>
-            <div class="time-seg">
-              <span id="minutes">00</span><small>Min</small>
-            </div>
-            <div class="time-seg">
-              <span id="seconds">00</span><small>Seg</small>
-            </div>
+      <div class="relative z-10 space-y-4 px-4 text-shadow-hero">
+        <h1 class="text-5xl md:text-7xl font-dancing">MIS 15 AÑOS</h1>
+        <h2 class="text-2xl md:text-4xl font-poppins">Astrid</h2>
+        <div id="countdown" class="mt-6 flex gap-6 justify-center font-poppins">
+          <div class="text-center">
+            <span id="days" class="block text-3xl md:text-4xl">00</span>
+            <small>Días</small>
+          </div>
+          <div class="text-center">
+            <span id="hours" class="block text-3xl md:text-4xl">00</span>
+            <small>Horas</small>
+          </div>
+          <div class="text-center">
+            <span id="mins" class="block text-3xl md:text-4xl">00</span>
+            <small>Min</small>
+          </div>
+          <div class="text-center">
+            <span id="secs" class="block text-3xl md:text-4xl">00</span>
+            <small>Seg</small>
           </div>
         </div>
-      </section>
+      </div>
+    </header>
 
-      <!-- 3. STORY -->
-      <section id="story">
-        <div class="sec-content story-inner">
-          <h2 class="story-title">Mis 15 Años</h2>
-          <p class="story-text">
-            Con la bendición de Dios y el amor que mis padres me han brindado,
-            me siento feliz de llegar a este momento de mi vida, el día en que
-            dejaré atrás mi infancia y comenzaré un nuevo viaje.
-            <br /><br />
-            Mi mayor deseo es compartir esta celebración con las personas que
-            siempre han estado para mí. ¡Tú eres una de ellas!
-          </p>
-        </div>
-      </section>
-
-      <!-- 4. FAMILY -->
-      <section id="family">
-        <div class="sec-content family-inner">
-          <h2>Con la compañía de</h2>
-          <div class="family-list">
-            <div class="family-group">
-              <h3>Mis Padres:</h3>
-              <p>
-                María Elizabeth Sotelo Saavedra<br />Anthony Paolo Alvarez Díaz
-              </p>
-            </div>
-            <div class="family-group">
-              <h3>Mis Padrinos:</h3>
-              <p>
-                Sabrina Liliana Sotelo Solar<br />Elvis Daniel Sotelo Saavedra
-              </p>
-            </div>
+    <!-- Main con fondo disco global -->
+    <main
+      role="main"
+      class="relative w-full bg-cover bg-center"
+      style="background-image: url('/images/disco-background.jpg')"
+    >
+      <div class="absolute inset-0 bg-black opacity-60"></div>
+      <div class="relative z-10">
+        <!-- Invitación -->
+        <section
+          id="invitation"
+          class="relative snap-start min-h-screen w-full flex flex-col items-center justify-center text-center px-6 overflow-hidden"
+          style="
+            background: radial-gradient(
+              circle at center,
+              rgba(212, 175, 55, 0.1),
+              rgba(31, 41, 55, 0.95) 80%
+            );
+          "
+        >
+          <div class="absolute inset-0 opacity-10 bg-pattern"></div>
+          <div
+            class="relative max-w-2xl transform opacity-0 translate-y-8 transition-all duration-700 reveal"
+          >
+            <h2 class="text-4xl md:text-5xl font-dancing text-yellow-300 mb-4">
+              Mis 15 años
+            </h2>
+            <svg
+              class="mx-auto mb-6 w-32 h-auto"
+              viewBox="0 0 100 10"
+              xmlns="http://www.w3.org/2000/svg"
+              aria-hidden="true"
+            >
+              <circle cx="10" cy="5" r="2" fill="#d4af37" />
+              <line
+                x1="14"
+                y1="5"
+                x2="86"
+                y2="5"
+                stroke="#d4af37"
+                stroke-width="0.5"
+              />
+              <circle cx="90" cy="5" r="2" fill="#d4af37" />
+            </svg>
+            <p class="mb-6 font-poppins text-gray-200">
+              Con la bendición de Dios y el amor que mis padres me han dado, me
+              siento feliz de llegar a este momento de mi vida, el día que
+              dejaré atrás mi infancia y comenzaré un nuevo viaje.
+            </p>
+            <p class="font-poppins text-yellow-200 italic">
+              “Mi mayor deseo es compartir con las personas que han estado
+              para mí. Tú eres una de ellas.”
+            </p>
           </div>
-        </div>
-      </section>
+        </section>
 
-      <!-- SECCIÓN 5 – DETALLES DEL EVENTO -->
-      <section id="event-details">
-        <div class="sec-content event-inner">
-          <h2>Detalles del Evento</h2>
-          <div class="event-cards">
-            <!-- Card única con fecha + hora apiladas -->
-            <div class="event-card">
-              <i class="bi bi-calendar4"></i>
-              <p class="value">03/05/2025</p>
-              <small class="label">Fecha</small>
-
-              <i class="bi bi-clock-history"></i>
-              <p class="value">7:00 PM</p>
-              <small class="label">Hora</small>
-            </div>
-
-            <!-- Card de Ubicación + Mapa -->
-            <div class="event-card">
-              <i class="bi bi-geo-alt"></i>
-              <p class="value">El Sarco, Trujillo</p>
-              <small class="label">Ubicación</small>
-              <a
-                href="https://www.google.com/maps/place/El+Sarco/@-8.0917606,-79.0846765,17z"
-                target="_blank"
-                class="btn-map"
+        <!-- Padres y Padrinos -->
+        <section
+          id="parents"
+          class="snap-start min-h-screen w-full relative flex items-center justify-center bg-gradient-to-br from-gray-800 to-black overflow-hidden px-6 text-center"
+        >
+          <div class="absolute inset-0 opacity-10 bg-pattern"></div>
+          <div
+            class="relative z-10 max-w-3xl p-8 bg-black bg-opacity-40 rounded-lg border border-yellow-300 border-opacity-60 shadow-xl"
+          >
+            <h2
+              class="text-3xl font-dancing text-yellow-300 mb-8 flex items-center justify-center space-x-2"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="h-8 w-8 text-yellow-300 animate-pulse-slow"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
               >
-                Ver en Maps
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l.286.879a1 1 0 00.95.69h.99c.969 0 
+                   1.371 1.24.588 1.81l-.667.485a1 1 0 00-.364 1.118l.286.879c.3.921-.755 
+                   1.688-1.54 1.118l-.667-.485a1 1 0 00-1.175 0l-.667.485c-.784.57-1.838-.197-
+                   1.54-1.118l.286-.879a1 1 0 00-.364-1.118l-.667-.485c-.784-.57-.38-1.81.588-
+                   1.81h.99a1 1 0 00.95-.69l.286-.879z"
+                />
+              </svg>
+              <span>Mis Padres y Padrinos</span>
+            </h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 text-left">
+              <div>
+                <h3
+                  class="text-xl font-poppins text-yellow-200 mb-4 flex items-center justify-center md:justify-start space-x-2"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="h-5 w-5 text-yellow-200"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M5 13l4 4L19 7"
+                    />
+                  </svg>
+                  <span>Padres</span>
+                </h3>
+                <ul class="space-y-2">
+                  <li class="flex items-center space-x-2">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      class="h-4 w-4 text-yellow-200"
+                      viewBox="0 0 20 20"
+                      fill="currentColor"
+                    >
+                      <circle cx="10" cy="10" r="2" />
+                    </svg>
+                    <span class="font-poppins text-gray-200"
+                      >María Elizabeth Sotelo Saavedra</span
+                    >
+                  </li>
+                  <li class="flex items-center space-x-2">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      class="h-4 w-4 text-yellow-200"
+                      viewBox="0 0 20 20"
+                      fill="currentColor"
+                    >
+                      <circle cx="10" cy="10" r="2" />
+                    </svg>
+                    <span class="font-poppins text-gray-200"
+                      >Anthony Paolo Álvarez Díaz</span
+                    >
+                  </li>
+                </ul>
+              </div>
+              <div>
+                <h3
+                  class="text-xl font-poppins text-yellow-200 mb-4 flex items-center justify-center md:justify-start space-x-2"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="h-5 w-5 text-yellow-200"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M5 13l4 4L19 7"
+                    />
+                  </svg>
+                  <span>Padrinos</span>
+                </h3>
+                <ul class="space-y-2">
+                  <li class="flex items-center space-x-2">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      class="h-4 w-4 text-yellow-200"
+                      viewBox="0 0 20 20"
+                      fill="currentColor"
+                    >
+                      <circle cx="10" cy="10" r="2" />
+                    </svg>
+                    <span class="font-poppins text-gray-200"
+                      >Sabrina Liliana Sotelo Solar</span
+                    >
+                  </li>
+                  <li class="flex items-center space-x-2">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      class="h-4 w-4 text-yellow-200"
+                      viewBox="0 0 20 20"
+                      fill="currentColor"
+                    >
+                      <circle cx="10" cy="10" r="2" />
+                    </svg>
+                    <span class="font-poppins text-gray-200"
+                      >Elvis Daniel Sotelo Saavedra</span
+                    >
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Evento -->
+        <section
+          id="event"
+          class="snap-start min-h-screen w-full relative px-6 bg-gradient-to-br from-gray-900 to-gray-800 overflow-hidden flex flex-col items-center justify-center"
+        >
+          <!-- Capas de fondo -->
+          <div class="absolute inset-0 bg-black opacity-60"></div>
+          <div class="absolute inset-0 bg-pattern opacity-5"></div>
+
+          <div class="relative z-10 w-full max-w-4xl mx-auto space-y-8">
+            <!-- Título + divisor -->
+            <div class="text-center">
+              <h2
+                class="inline-flex items-center space-x-2 text-3xl font-dancing text-yellow-300"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="h-8 w-8 text-yellow-300 animate-pulse-slow"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l.286.879a1 1 0 
+                   00.95.69h.99c.969 0 1.371 1.24.588 1.81l-.667.485a1 1 0 
+                   00-.364 1.118l.286.879c.3.921-.755 1.688-1.54 
+                   1.118l-.667-.485a1 1 0 00-1.175 0l-.667.485c-.784.57-
+                   1.838-.197-1.54-1.118l.286-.879a1 1 0 
+                   00-.364-1.118l-.667-.485c-.784-.57-.38-1.81.588-
+                   1.81h.99a1 1 0 00.95-.69l.286-.879z"
+                  />
+                </svg>
+                <span>Detalles del Evento</span>
+              </h2>
+              <svg
+                class="mx-auto mt-2 w-24 h-1"
+                viewBox="0 0 100 4"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <rect width="100" height="4" fill="#d4af37" />
+              </svg>
+            </div>
+
+            <!-- Tarjetas de detalle -->
+            <div
+              class="grid grid-cols-1 md:grid-cols-3 gap-6 mx-auto w-full max-w-md md:max-w-none"
+            >
+              <!-- Fecha -->
+              <div
+                class="bg-black bg-opacity-40 border border-yellow-300 rounded-lg p-6 flex items-center gap-3 md:flex-col md:items-center md:gap-3"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="h-10 w-10 text-yellow-300"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M8 7V3m8 4V3m-9 8h10M5 
+                   21h14a2 2 0 002-2V7a2 2 0 
+                   00-2-2H5a2 2 0 00-2 2v12a2 
+                   2 0 002 2z"
+                  />
+                </svg>
+                <div class="flex flex-col items-start md:items-center">
+                  <p class="font-poppins text-gray-200">
+                    <strong>Fecha</strong>
+                  </p>
+                  <p class="font-poppins text-white text-lg">03/05/2025</p>
+                </div>
+              </div>
+              <!-- Hora -->
+              <div
+                class="bg-black bg-opacity-40 border border-yellow-300 rounded-lg p-6 flex items-center gap-3 md:flex-col md:items-center md:gap-3"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="h-10 w-10 text-yellow-300"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M12 8v4l3 3m6-3a9 9 0 
+                   11-18 0 9 9 0 0118 0z"
+                  />
+                </svg>
+                <div class="flex flex-col items-start md:items-center">
+                  <p class="font-poppins text-gray-200">
+                    <strong>Hora</strong>
+                  </p>
+                  <p class="font-poppins text-white text-lg">18:00</p>
+                </div>
+              </div>
+              <!-- Local -->
+              <div
+                class="bg-black bg-opacity-40 border border-yellow-300 rounded-lg p-6 flex items-center gap-3 md:flex-col md:items-center md:gap-3"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="h-10 w-10 text-yellow-300"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M17.657 16.657L13.414 
+                   21.9a1 1 0 01-1.414 
+                   0l-4.243-4.243a8 8 0 1111.314 
+                   0zM15 11a3 3 0 11-6 0 3 3 0 016 0z"
+                  />
+                </svg>
+                <div class="flex flex-col items-start md:items-center">
+                  <p class="font-poppins text-gray-200">
+                    <strong>Local</strong>
+                  </p>
+                  <p class="font-poppins text-white text-lg">El Sarco</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Botón de Google Maps -->
+            <div class="text-center">
+              <a
+                href="https://maps.app.goo.gl/Q8YHb4pQDvP7bifn6"
+                target="_blank"
+                rel="noopener"
+                class="inline-flex items-center px-6 py-2 font-poppins text-yellow-300 border border-yellow-300 rounded-full space-x-2 hover:bg-yellow-300 hover:text-gray-900 transition"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="h-5 w-5"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M13.828 10.172a4 4 0 
+                   010 5.656L9.172 20.484m6.656-10.312l4.657 
+                   4.657a4 4 0 01-5.656 
+                   5.656L9.172 15.828m0 0L4.515 11.172"
+                  />
+                </svg>
+                <span>Ver en Google Maps</span>
               </a>
-              <div class="map-container">
-                <!-- Sustituye este `src` por el que te da Google al pulsar "Insertar mapa" -->
+            </div>
+
+            <!-- Mapa embebido -->
+            <div class="flex justify-center mt-8">
+              <div
+                class="w-full max-w-sm aspect-video rounded-lg overflow-hidden shadow-lg"
+              >
                 <iframe
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3933.7329!2d-79.0846765!3d-8.0917606!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x91ad3c3eb623058b%3A0x6197460e2bb69362!2sEl+Sarco!5e0!3m2!1ses!2spe!4v1713478023678!5m2!1ses!2spe"
-                  loading="lazy"
+                  src="https://maps.google.com/maps?q=El%20Sarco&output=embed"
+                  class="w-full h-full"
+                  frameborder="0"
                   allowfullscreen
-                  referrerpolicy="no-referrer-when-downgrade"
+                  aria-hidden="false"
+                  tabindex="0"
                 ></iframe>
               </div>
             </div>
           </div>
-        </div>
-      </section>
+        </section>
 
-      <!-- SECCIÓN 14 – FOOTER -->
-      <section id="footer">
-        <div class="sec-content footer-inner">
-          <p class="hashtag">#AstridXV</p>
-          <div class="social-icons">
-            <a
-              href="https://www.instagram.com/"
-              target="_blank"
-              aria-label="Instagram"
+        <!-- RSVP -->
+        <section
+          id="rsvp"
+          class="snap-start min-h-screen relative flex items-center justify-center px-6 bg-rsvp-bg overflow-hidden"
+        >
+          <!-- Overlay patrón y capa oscura -->
+          <div class="absolute inset-0 bg-pattern opacity-10"></div>
+          <div class="absolute inset-0 bg-black opacity-50"></div>
+
+          <!-- Card central -->
+          <div
+            class="relative z-10 max-w-md mx-auto p-8 bg-black bg-opacity-40 rounded-xl border border-yellow-300 shadow-xl space-y-6 text-center"
+          >
+            <!-- Título con sparkles -->
+            <h2
+              class="text-3xl font-dancing text-yellow-300 flex items-center justify-center space-x-2"
             >
-              <i class="bi bi-instagram"></i>
-            </a>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="h-6 w-6 animate-pulse-slow"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M11 3l1 3m0 0l3 .2M12 6.2l-2.8 1.6M12 6.2l2.8 1.6M4 15l1.8 1.2m0 0l2.6.2M5.8 16.2l1.8-1.2m0 0l.2-2.6M19 15l-1.8 1.2m0 0l-2.6.2M17.2 16.2l1.8-1.2m0 0l.2-2.6"
+                />
+              </svg>
+              <span>Confirma tu Asistencia</span>
+            </h2>
+
+            <!-- Texto -->
+            <p class="font-poppins text-gray-200">
+              Nos encantaría contar con tu presencia. Por favor, confirma tu
+              asistencia haciendo clic en el siguiente botón:
+            </p>
+
+            <!-- Botón WhatsApp -->
             <a
-              href="https://www.facebook.com/"
+              href="https://wa.me/521234567890?text=¡Hola!%20Confirmo%20mi%20asistencia%20a%20los%2015%20años%20de%20Astrid."
               target="_blank"
-              aria-label="Facebook"
+              rel="noopener"
+              class="inline-flex items-center justify-center px-6 py-3 bg-yellow-300 text-gray-900 font-poppins rounded-full space-x-2 hover:bg-yellow-400 transition"
             >
-              <i class="bi bi-facebook"></i>
-            </a>
-            <a
-              href="https://www.whatsapp.com/"
-              target="_blank"
-              aria-label="WhatsApp"
-            >
-              <i class="bi bi-whatsapp"></i>
+              <!-- Asegúrate de tener este SVG en /images/whatsapp.svg -->
+              <img src="/images/whatsapp.svg" alt="WhatsApp" class="w-6 h-6" />
+              <span>Confirmar Asistencia</span>
             </a>
           </div>
-          <p class="credits">
-            © 2025 Astrid Álvarez Sotelo. Todos los derechos reservados.
-          </p>
-        </div>
-      </section>
+        </section>
+
+        <!-- Código de Vestimenta -->
+        <section
+          id="dress-code"
+          class="snap-start min-h-screen relative flex items-center justify-center px-6 bg-dress-bg overflow-hidden"
+        >
+          <!-- Overlay patrón y capa oscura -->
+          <div class="absolute inset-0 bg-pattern opacity-10"></div>
+          <div class="absolute inset-0 bg-black opacity-60"></div>
+
+          <!-- Tarjeta central -->
+          <div
+            class="relative z-10 max-w-md mx-auto p-8 bg-black bg-opacity-40 rounded-xl border border-yellow-300 shadow-xl reveal transition-all duration-700"
+          >
+            <!-- Título -->
+            <h2 class="text-3xl font-dancing text-yellow-300 mb-6">
+              Código de Vestimenta
+            </h2>
+
+            <!-- Lista con iconos -->
+            <ul class="space-y-6">
+              <li class="flex items-start space-x-3">
+                <!-- Icono Sparkles para Damas -->
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="h-6 w-6 flex-shrink-0 text-yellow-300"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M11 3l1 3m0 0l3 .2M12 6.2L9.2 7.8M12 6.2l2.8 1.6M4 15l1.8 1.2m0 0L8.6 16M5.8 16.2L7.6 14.8m0 0l.2-2.6M19 15l-1.8 1.2m0 0l-2.6.2M17.2 16.2l1.8-1.2m0 0l.2-2.6"
+                  />
+                </svg>
+                <div class="font-poppins text-gray-200">
+                  <p class="font-semibold">Damas:</p>
+                  <p>Vestido de cóctel o largo en tonos pastel o metálicos.</p>
+                </div>
+              </li>
+              <li class="flex items-start space-x-3">
+                <!-- Icono User para Caballeros -->
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="h-6 w-6 flex-shrink-0 text-yellow-300"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M5.121 17.804A13.937 13.937 0 0112 15c2.486 0 4.797.645 6.879 1.804M15 10a3 3 0 11-6 0 3 3 0 016 0z"
+                  />
+                </svg>
+                <div class="font-poppins text-gray-200">
+                  <p class="font-semibold">Caballeros:</p>
+                  <p>Traje oscuro con corbata o pajarita.</p>
+                </div>
+              </li>
+              <li class="flex items-start space-x-3">
+                <!-- Icono CheckBadge para Zapatos -->
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="h-6 w-6 flex-shrink-0 text-yellow-300"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M9 12l2 2 4-4m1 8a9 9 0 11-6.52-8.48m4.24 4.24A9 9 0 0119 12"
+                  />
+                </svg>
+                <div class="font-poppins text-gray-200">
+                  <p class="font-semibold">Zapatos:</p>
+                  <p>Formales y cómodos.</p>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </section>
+
+        <!-- Galería -->
+        <section
+          id="gallery"
+          class="snap-start min-h-screen w-full flex flex-col items-center justify-center px-6 overflow-y-auto"
+        >
+          <div class="max-w-4xl w-full mx-auto text-center space-y-6">
+            <h2 class="text-3xl font-dancing text-yellow-300">
+              Galería de Fotos
+            </h2>
+
+            <!-- Grid preview de 4 fotos -->
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+              <!-- Cada miniatura ocupa caja cuadrada de h-48 -->
+              <div class="h-48 overflow-hidden rounded-lg">
+                <img
+                  src="images/gallery/photo-1.jpg"
+                  alt="Foto 1"
+                  class="w-full h-full object-cover"
+                />
+              </div>
+              <div class="h-48 overflow-hidden rounded-lg">
+                <img
+                  src="images/gallery/photo-2.jpg"
+                  alt="Foto 2"
+                  class="w-full h-full object-cover"
+                />
+              </div>
+              <div class="h-48 overflow-hidden rounded-lg">
+                <img
+                  src="images/gallery/photo-3.jpg"
+                  alt="Foto 3"
+                  class="w-full h-full object-cover"
+                />
+              </div>
+              <div class="h-48 overflow-hidden rounded-lg">
+                <img
+                  src="images/gallery/photo-4.jpg"
+                  alt="Foto 4"
+                  class="w-full h-full object-cover"
+                />
+              </div>
+            </div>
+
+            <!-- Botón pasarela -->
+            <button
+              id="open-gallery"
+              class="mt-4 inline-flex items-center px-6 py-3 bg-yellow-300 text-gray-900 font-poppins rounded-full space-x-2 hover:bg-yellow-400 transition"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="h-5 w-5"
+                fill="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M12 4.354a4 4 0 014 0l4 2.31a4 4 0 012 3.464v4.068a4 4 0 01-2 3.464l-4 2.31a4 4 0 01-4 0l-4-2.31a4 4 0 01-2-3.464V9.828a4 4 0 012-3.464l4-2.31z"
+                />
+              </svg>
+              <span>Ver pasarela</span>
+            </button>
+          </div>
+        </section>
+
+        <!-- Palabras de los Padres -->
+        <section
+          id="parents-words"
+          class="snap-start min-h-screen relative px-6 bg-parents-words-bg flex items-center justify-center overflow-hidden"
+        >
+          <!-- Overlay patrón y capa oscura -->
+          <div class="absolute inset-0 bg-pattern opacity-10"></div>
+          <div class="absolute inset-0 bg-black opacity-60"></div>
+
+          <!-- Tarjeta de palabras -->
+          <div
+            class="relative z-10 max-w-2xl mx-auto p-8 bg-black bg-opacity-40 rounded-xl border border-yellow-300 shadow-lg text-center reveal transition-all duration-700 space-y-6"
+          >
+            <!-- Título con sparkles -->
+            <h2
+              class="flex items-center justify-center text-3xl font-dancing text-yellow-300 space-x-2"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="h-6 w-6 animate-pulse-slow"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M11 3l1 3m0 0l3 .2M12 6.2L9.2 7.8M12 6.2l2.8 1.6M4 15l1.8 1.2m0 0L8.6 16M5.8 16.2L7.6 14.8m0 0l.2-2.6M19 15l-1.8 1.2m0 0l-2.6.2M17.2 16.2l1.8-1.2m0 0l.2-2.6"
+                />
+              </svg>
+              <span>A nuestra hija</span>
+            </h2>
+
+            <!-- Divisor dorado -->
+            <svg
+              class="mx-auto w-24 h-1"
+              viewBox="0 0 100 4"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <rect width="100" height="4" fill="#d4af37" />
+            </svg>
+
+            <!-- Citas -->
+            <blockquote
+              class="font-poppins text-gray-200 italic text-lg leading-relaxed"
+            >
+              “Querida Astrid, desde el momento en que te tuvimos en brazos
+              supimos que serías nuestra mayor bendición. Cada día nos llenas de
+              orgullo y satisfacción.”
+            </blockquote>
+            <blockquote
+              class="font-poppins text-gray-200 italic text-lg leading-relaxed"
+            >
+              “Al celebrar tus 15 años, vemos la maravillosa joven en la que te
+              has convertido. Gracias por tu amor y alegría. Te amamos siempre.”
+            </blockquote>
+
+            <!-- Corazón animado -->
+            <div class="flex justify-center">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="h-8 w-8 text-yellow-300 animate-ping"
+                fill="currentColor"
+                viewBox="0 0 20 20"
+              >
+                <path
+                  d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 18.343l-6.828-6.828a4 4 0 010-5.656z"
+                />
+              </svg>
+            </div>
+          </div>
+        </section>
+      </div>
     </main>
 
-    <!-- 11. MUSIC CONTROL -->
-    <audio id="bg-music" src="assets/yourebeautiful.mp3" loop autoplay></audio>
-    <button id="music-toggle" class="music-toggle" type="button">
-      <i class="bi bi-volume-up-fill"></i>
-    </button>
+    <!-- Footer -->
+    <footer
+      role="contentinfo"
+      class="relative snap-end w-full py-8 bg-gray-900 overflow-hidden"
+    >
+      <!-- Patrón disco de puntos -->
+      <div class="absolute inset-0 bg-pattern opacity-10"></div>
 
-    <!-- Scripts -->
-    <script>
-      // — Contador regresivo —
-      (function () {
-        const goal = new Date("2025-05-03T19:00:00"),
-          ids = ["days", "hours", "minutes", "seconds"],
-          pad = (v) => String(v).padStart(2, "0");
-        function tick() {
-          const diff = goal - Date.now();
-          let d = 0,
-            h = 0,
-            m = 0,
-            s = 0;
-          if (diff > 0) {
-            s = Math.floor(diff / 1e3) % 60;
-            m = Math.floor(diff / 6e4) % 60;
-            h = Math.floor(diff / 3.6e6) % 24;
-            d = Math.floor(diff / 8.64e7);
-          } else clearInterval(int);
-          [d, h, m, s].forEach(
-            (v, i) => (document.getElementById(ids[i]).textContent = pad(v))
-          );
-        }
-        tick();
-        const int = setInterval(tick, 1000);
-      })();
+      <div class="relative z-10 container mx-auto px-4">
+        <!-- Divider dorado opcional -->
+        <hr class="border-t border-yellow-300 w-24 mx-auto mb-6" />
 
-      // — Scroll‐snap auto al dejar de hacer scroll —
-      (function () {
-        const c = document.getElementById("container"),
-          secs = Array.from(c.querySelectorAll("section"));
-        c.addEventListener("scroll", () => {
-          clearTimeout(c._t);
-          c._t = setTimeout(() => {
-            const pos = c.scrollTop;
-            const tgt = secs.reduce((p, s) =>
-              Math.abs(s.offsetTop - pos) < Math.abs(p.offsetTop - pos) ? s : p
-            );
-            tgt.scrollIntoView({ behavior: "smooth" });
-          }, 80);
-        });
-      })();
+        <!-- Texto centrado -->
+        <p class="font-poppins text-gray-400 text-center">
+          © 2025 Familia Álvarez Díaz. Todos los derechos reservados.
+        </p>
+      </div>
+    </footer>
 
-      // — Control de música —
-      const bgMusic = document.getElementById("bg-music");
-      const toggleBtn = document.getElementById("music-toggle");
-      const icon = toggleBtn.querySelector("i");
+    <!-- Modal / Pasarela -->
+    <div
+      id="gallery-modal"
+      class="fixed inset-0 z-50 hidden bg-black bg-opacity-90"
+    >
+      <div class="flex items-center justify-center h-screen p-4">
+        <div class="relative w-full max-w-4xl h-full modal-content">
+          <!-- Botón Cerrar -->
+          <button
+            id="close-gallery"
+            class="absolute top-4 right-4 text-white text-3xl z-20"
+            aria-label="Cerrar pasarela"
+          >
+            &times;
+          </button>
 
-      // Alternar sonido al hacer clic en el botón
-      toggleBtn.addEventListener("click", () => {
-        if (bgMusic.paused) {
-          // Si la música no ha comenzado (por ejemplo, navegadores que bloquean autoplay), iniciarla con sonido
-          bgMusic.muted = false;
-          bgMusic.play();
-          icon.classList.remove("bi-volume-mute-fill");
-          icon.classList.add("bi-volume-up-fill");
-        } else if (bgMusic.muted) {
-          // Si actualmente está silenciado, activar el sonido
-          bgMusic.muted = false;
-          icon.classList.remove("bi-volume-mute-fill");
-          icon.classList.add("bi-volume-up-fill");
-        } else {
-          // Si actualmente suena, silenciarlo
-          bgMusic.muted = true;
-          icon.classList.remove("bi-volume-up-fill");
-          icon.classList.add("bi-volume-mute-fill");
-        }
-      });
-    </script>
+          <!-- Flechas navegación -->
+          <button id="prev-slide" class="nav-arrow left-4">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="h-8 w-8"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M15 19l-7-7 7-7"
+              />
+            </svg>
+          </button>
+          <button id="next-slide" class="nav-arrow right-4">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="h-8 w-8"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M9 5l7 7-7 7"
+              />
+            </svg>
+          </button>
+
+          <!-- Slider: 100% ancho x 100% alto -->
+          <div
+            id="slider"
+            class="h-full overflow-hidden snap-x snap-mandatory flex"
+          >
+            <!-- Slide -->
+            <div
+              class="snap-center flex-shrink-0 w-full h-full flex items-center justify-center"
+            >
+              <img
+                src="images/gallery/photo-1.jpg"
+                alt="Foto 1"
+                class="max-w-full max-h-full object-contain rounded-lg"
+              />
+            </div>
+            <div
+              class="snap-center flex-shrink-0 w-full h-full flex items-center justify-center"
+            >
+              <img
+                src="images/gallery/photo-2.jpg"
+                alt="Foto 2"
+                class="max-w-full max-h-full object-contain rounded-lg"
+              />
+            </div>
+            <div
+              class="snap-center flex-shrink-0 w-full h-full flex items-center justify-center"
+            >
+              <img
+                src="images/gallery/photo-3.jpg"
+                alt="Foto 3"
+                class="max-w-full max-h-full object-contain rounded-lg"
+              />
+            </div>
+            <div
+              class="snap-center flex-shrink-0 w-full h-full flex items-center justify-center"
+            >
+              <img
+                src="images/gallery/photo-4.jpg"
+                alt="Foto 4"
+                class="max-w-full max-h-full object-contain rounded-lg"
+              />
+            </div>
+            <div
+              class="snap-center flex-shrink-0 w-full h-full flex items-center justify-center"
+            >
+              <img
+                src="images/gallery/photo-5.jpg"
+                alt="Foto 5"
+                class="max-w-full max-h-full object-contain rounded-lg"
+              />
+            </div>
+            <div
+              class="snap-center flex-shrink-0 w-full h-full flex items-center justify-center"
+            >
+              <img
+                src="images/gallery/photo-6.jpg"
+                alt="Foto 6"
+                class="max-w-full max-h-full object-contain rounded-lg"
+              />
+            </div>
+            <div
+              class="snap-center flex-shrink-0 w-full h-full flex items-center justify-center"
+            >
+              <img
+                src="images/gallery/photo-7.jpg"
+                alt="Foto 7"
+                class="max-w-full max-h-full object-contain rounded-lg"
+              />
+            </div>
+            <div
+              class="snap-center flex-shrink-0 w-full h-full flex items-center justify-center"
+            >
+              <img
+                src="images/gallery/photo-8.jpg"
+                alt="Foto 8"
+                class="max-w-full max-h-full object-contain rounded-lg"
+              />
+            </div>
+            <div
+              class="snap-center flex-shrink-0 w-full h-full flex items-center justify-center"
+            >
+              <img
+                src="images/gallery/photo-9.jpg"
+                alt="Foto 9"
+                class="max-w-full max-h-full object-contain rounded-lg"
+              />
+            </div>
+            <div
+              class="snap-center flex-shrink-0 w-full h-full flex items-center justify-center"
+            >
+              <img
+                src="images/gallery/photo-10.jpg"
+                alt="Foto 10"
+                class="max-w-full max-h-full object-contain rounded-lg"
+              />
+            </div>
+            <!-- … Repite hasta photo-10.jpg … -->
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
   </body>
 </html>
