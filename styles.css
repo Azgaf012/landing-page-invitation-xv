@@ -99,4 +99,7 @@
 .music-btn:hover {
   background: #7d9136;      /* bg-yellow-400 */
 }
+#open-gallery {
+  z-index: 10001 !important;           /* Siempre por encima */
+}
 

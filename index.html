@@ -75,16 +75,16 @@
       role="main"
       class="relative w-full snap-start bg-[url('/images/fondo-disco2.jpg')] bg-cover bg-center bg-no-repeat "
     >
-      <div class="absolute inset-0 bg-black bg-opacity-90"></div>
-      <div class="relative z-1">
+      <div class="absolute inset-0 bg-black bg-opacity-90 pointer-events-none"></div>
+      <div class="relative ">
         <!-- Invitación -->
         <section
           id="invitation"
           class="relative snap-start h-screen w-full flex flex-col items-center justify-center text-center px-6 overflow-hidden"
         >
           <!-- Capas de fondo -->
-          <div class="absolute inset-0 bg-black opacity-10"></div>
-          <div class="absolute inset-0 bg-pattern opacity-10"></div>
+          <div class="absolute inset-0 bg-black opacity-10 pointer-events-none"></div>
+          <div class="absolute inset-0 bg-pattern opacity-10 pointer-events-none"></div>
 
           <div
             class="relative max-w-2xl transform opacity-100 translate-y-8 transition-all duration-700 reveal"
@@ -128,8 +128,8 @@
           class="snap-start h-screen relative flex items-center justify-center px-6 bg-rsvp-bg overflow-hidden"
         >
           <!-- Capas de fondo -->
-          <div class="absolute inset-0 bg-black opacity-10"></div>
-          <div class="absolute inset-0 bg-pattern opacity-10"></div>
+          <div class="absolute inset-0 bg-black opacity-10 pointer-events-none"></div>
+          <div class="absolute inset-0 bg-pattern opacity-10 pointer-events-none"></div>
 
           <div
             class="relative z-10 max-w-3xl p-8 bg-black bg-opacity-40 rounded-lg border border-yellow-300 border-opacity-60 shadow-xl"
@@ -267,8 +267,8 @@
           class="snap-start h-screen relative flex items-center justify-center px-6 bg-rsvp-bg overflow-hidden"
         >
           <!-- Capas de fondo -->
-          <div class="absolute inset-0 bg-black opacity-10"></div>
-          <div class="absolute inset-0 bg-pattern opacity-10"></div>
+          <div class="absolute inset-0 bg-black opacity-10 pointer-events-none"></div>
+          <div class="absolute inset-0 bg-pattern opacity-10 pointer-events-none"></div>
 
           <div class="relative z-10 w-full max-w-4xl mx-auto space-y-8">
             <!-- Título + divisor -->
@@ -293,8 +293,7 @@
                    1.118l-.667-.485a1 1 0 00-1.175 0l-.667.485c-.784.57-
                    1.838-.197-1.54-1.118l.286-.879a1 1 0 
                    00-.364-1.118l-.667-.485c-.784-.57-.38-1.81.588-
-                   1.81h.99a1 1 0 00.95-.69l.286-.879z"
-                  />
+                   1.81h.99a1 1 0 00.95-.69l.286-.879z" />
                 </svg>
                 <span>Detalles del Evento</span>
               </h2>
@@ -449,8 +448,8 @@
           class="snap-start h-screen relative flex items-center justify-center px-6 bg-rsvp-bg overflow-hidden"
         >
           <!-- Overlay patrón y capa oscura -->
-          <div class="absolute inset-0 bg-pattern opacity-10"></div>
-          <div class="absolute inset-0 bg-black opacity-10"></div>
+          <div class="absolute inset-0 bg-pattern opacity-10 pointer-events-none"></div>
+          <div class="absolute inset-0 bg-black opacity-10 pointer-events-none"></div>
 
           <!-- Card central -->
           <div
@@ -504,8 +503,8 @@
           class="snap-start h-screen relative flex items-center justify-center px-6 bg-dress-bg overflow-hidden"
         >
           <!-- Overlay patrón y capa oscura -->
-          <div class="absolute inset-0 bg-pattern opacity-10"></div>
-          <div class="absolute inset-0 bg-black opacity-10"></div>
+          <div class="absolute inset-0 bg-pattern opacity-10 pointer-events-none"></div>
+          <div class="absolute inset-0 bg-black opacity-10 pointer-events-none"></div>
 
           <!-- Tarjeta central -->
           <div
@@ -592,8 +591,6 @@
           class="snap-start h-screen w-full flex flex-col items-center justify-center px-6 overflow-y-auto"
         >
           <!-- Overlay patrón y capa oscura -->
-          <div class="absolute inset-0 bg-pattern opacity-10"></div>
-          <div class="absolute inset-0 bg-black opacity-10"></div>
           <div class="max-w-4xl w-full mx-auto text-center space-y-6">
             <h2 class="text-3xl font-dancing text-yellow-300">
               Galería de Fotos
@@ -635,7 +632,7 @@
             <!-- Botón pasarela -->
             <button
               id="open-gallery"
-              class="mt-4 inline-flex items-center px-6 py-3 bg-yellow-300 text-gray-900 font-poppins rounded-full space-x-2 hover:bg-yellow-400 transition"
+              class="mt-4 inline-flex items-center px-6 py-3  bg-yellow-300 text-gray-900 font-poppins rounded-full space-x-2 hover:bg-yellow-400 transition"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -659,8 +656,8 @@
           class="snap-start h-screen relative px-6 bg-parents-words-bg flex items-center justify-center overflow-hidden"
         >
           <!-- Overlay patrón y capa oscura -->
-          <div class="absolute inset-0 bg-pattern opacity-10"></div>
-          <div class="absolute inset-0 bg-black opacity-10"></div>
+          <div class="absolute inset-0 bg-pattern opacity-10 pointer-events-none"></div>
+          <div class="absolute inset-0 bg-black opacity-10 pointer-events-none"></div>
 
           <!-- Tarjeta de palabras -->
           <div
@@ -751,7 +748,7 @@
     <!-- Música de fondo, muteada para poder autoplay -->
     <audio
       id="bg-music"
-      src="assets/yourebeautiful.mp3"
+      src="assets/yourebeautiful-64k.mp3"
       autoplay
       loop
       preload="auto"
@@ -914,6 +911,6 @@
       </div>
     </div>
 
-    <script src="script.js"></script>
+    <script src="script.js" defer></script>
   </body>
 </html>
