@@ -92,25 +92,34 @@
     });
   }
 
-  // Al cargar, intenta autoplay en 2s; si falla, desbloquea al primer clic
+  // Al cargar, intenta reproducir hasta que funcione
   window.addEventListener('load', () => {
-    setTimeout(() => {
-      if (bgMusic) {
-        bgMusic.muted = false;
-        bgMusic.play()
-          .then(() => musicToggle && (musicToggle.textContent = '🔊'))
-          .catch(() => {
-            document.addEventListener('click', unlockAudio, { once: true });
-          });
-      }
-    }, 2000);
+    if (!bgMusic) return;
+    document.addEventListener('click', attemptPlay);
+    attemptPlay();
   });
+
+  // Reintento recursivo hasta que suene la música
+  function attemptPlay() {
+    bgMusic.muted = false;
+    bgMusic.play()
+      .then(onPlaySuccess)
+      .catch(() => setTimeout(attemptPlay, 1000));
+  }
+
+  // manejador común de éxito
+  function onPlaySuccess() {
+    musicToggle && (musicToggle.textContent = '🔊');
+    document.removeEventListener('click', attemptPlay);
+  }
 
   // Desmuta y reproduce al primer clic si el autoplay fue bloqueado
   function unlockAudio() {
     if (!bgMusic) return;
     bgMusic.muted = false;
-    bgMusic.play().catch(() => {});
+    bgMusic.play()
+      .then(onPlaySuccess)
+      .catch(() => {});
     if (musicToggle) musicToggle.textContent = '🔊';
   }
 
