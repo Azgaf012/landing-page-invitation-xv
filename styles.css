@@ -4,11 +4,7 @@
 
 /* Utilidades personalizadas */
 @layer utilities {
-  /* Patrón disco de puntos */
-  .bg-pattern {
-    background-image: radial-gradient(#d4af37 1px, transparent 1px);
-    background-size: 20px 20px;
-  }
+
 
   /* Spin más lento para mini‑bola disco */
   .animate-spin-slow {
@@ -51,8 +47,6 @@
   to { transform: rotate(360deg); }
 }
 
-
-
 /* Oculta scrollbar del slider */
 #slider {
   scroll-behavior: smooth;
@@ -81,3 +75,28 @@
 }
 .nav-arrow.left-4  { left: 1rem; }
 .nav-arrow.right-4 { right: 1rem; }
+
+
+.music-btn {
+  position: fixed !important;
+  top: auto !important;     /* Anula cualquier top previo */
+  bottom: 1rem;             /* 1rem desde el fondo */
+  right: 1rem;              /* 1rem desde la derecha */
+  width: 3rem;              /* Ancho */
+  height: 3rem;             /* Alto */
+  font-size: 1.5rem;        /* Tamaño del icono/texto */
+  background: #83744e;      /* bg-yellow-300 */
+  color: #1F2937;           /* text-gray-900 */
+  border-radius: 9999px;    /* rounded-full */
+  box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1), 0 4px 6px -4px rgba(0,0,0,0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10000;           /* Siempre por encima */
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.music-btn:hover {
+  background: #7d9136;      /* bg-yellow-400 */
+}
+

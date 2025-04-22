@@ -30,13 +30,15 @@
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body
-    class="antialiased text-white bg-gray-900 overflow-y-scroll overflow-x-hidden w-full"
+    class="antialiased text-white bg-gray-900 overflow-y-scroll overflow-x-hidden w-full "
   >
+
+
     <!-- Hero -->
     <header
       id="hero"
       role="banner"
-      class="relative min-h-screen w-full flex items-center justify-center text-center bg-cover bg-center snap-start"
+      class="relative h-screen w-full flex items-center justify-center text-center bg-cover bg-center snap-start"
       style="background-image: url('/images/fondo-astrid.jpg')"
     >
       <div class="absolute inset-0 bg-black opacity-60"></div>
@@ -71,26 +73,21 @@
     <!-- Main con fondo disco global -->
     <main
       role="main"
-      class="relative w-full bg-cover bg-center"
-      style="background-image: url('/images/disco-background.jpg')"
+      class="relative w-full snap-start bg-[url('/images/fondo-disco2.jpg')] bg-cover bg-center bg-no-repeat "
     >
-      <div class="absolute inset-0 bg-black opacity-60"></div>
-      <div class="relative z-10">
+      <div class="absolute inset-0 bg-black bg-opacity-90"></div>
+      <div class="relative z-1">
         <!-- Invitación -->
         <section
           id="invitation"
-          class="relative snap-start min-h-screen w-full flex flex-col items-center justify-center text-center px-6 overflow-hidden"
-          style="
-            background: radial-gradient(
-              circle at center,
-              rgba(212, 175, 55, 0.1),
-              rgba(31, 41, 55, 0.95) 80%
-            );
-          "
+          class="relative snap-start h-screen w-full flex flex-col items-center justify-center text-center px-6 overflow-hidden"
         >
-          <div class="absolute inset-0 opacity-10 bg-pattern"></div>
+          <!-- Capas de fondo -->
+          <div class="absolute inset-0 bg-black opacity-10"></div>
+          <div class="absolute inset-0 bg-pattern opacity-10"></div>
+
           <div
-            class="relative max-w-2xl transform opacity-0 translate-y-8 transition-all duration-700 reveal"
+            class="relative max-w-2xl transform opacity-100 translate-y-8 transition-all duration-700 reveal"
           >
             <h2 class="text-4xl md:text-5xl font-dancing text-yellow-300 mb-4">
               Mis 15 años
@@ -123,13 +120,17 @@
             </p>
           </div>
         </section>
+        <hr class="border-t-2 border-yellow-300 w-24 mx-auto my-12" />
 
         <!-- Padres y Padrinos -->
         <section
           id="parents"
-          class="snap-start min-h-screen w-full relative flex items-center justify-center bg-gradient-to-br from-gray-800 to-black overflow-hidden px-6 text-center"
+          class="snap-start h-screen relative flex items-center justify-center px-6 bg-rsvp-bg overflow-hidden"
         >
-          <div class="absolute inset-0 opacity-10 bg-pattern"></div>
+          <!-- Capas de fondo -->
+          <div class="absolute inset-0 bg-black opacity-10"></div>
+          <div class="absolute inset-0 bg-pattern opacity-10"></div>
+
           <div
             class="relative z-10 max-w-3xl p-8 bg-black bg-opacity-40 rounded-lg border border-yellow-300 border-opacity-60 shadow-xl"
           >
@@ -258,15 +259,16 @@
             </div>
           </div>
         </section>
+        <hr class="border-t-2 border-yellow-300 w-24 mx-auto my-12" />
 
         <!-- Evento -->
         <section
           id="event"
-          class="snap-start min-h-screen w-full relative px-6 bg-gradient-to-br from-gray-900 to-gray-800 overflow-hidden flex flex-col items-center justify-center"
+          class="snap-start h-screen relative flex items-center justify-center px-6 bg-rsvp-bg overflow-hidden"
         >
           <!-- Capas de fondo -->
-          <div class="absolute inset-0 bg-black opacity-60"></div>
-          <div class="absolute inset-0 bg-pattern opacity-5"></div>
+          <div class="absolute inset-0 bg-black opacity-10"></div>
+          <div class="absolute inset-0 bg-pattern opacity-10"></div>
 
           <div class="relative z-10 w-full max-w-4xl mx-auto space-y-8">
             <!-- Título + divisor -->
@@ -439,15 +441,16 @@
             </div>
           </div>
         </section>
+        <hr class="border-t-2 border-yellow-300 w-24 mx-auto my-12" />
 
         <!-- RSVP -->
         <section
           id="rsvp"
-          class="snap-start min-h-screen relative flex items-center justify-center px-6 bg-rsvp-bg overflow-hidden"
+          class="snap-start h-screen relative flex items-center justify-center px-6 bg-rsvp-bg overflow-hidden"
         >
           <!-- Overlay patrón y capa oscura -->
           <div class="absolute inset-0 bg-pattern opacity-10"></div>
-          <div class="absolute inset-0 bg-black opacity-50"></div>
+          <div class="absolute inset-0 bg-black opacity-10"></div>
 
           <!-- Card central -->
           <div
@@ -482,7 +485,7 @@
 
             <!-- Botón WhatsApp -->
             <a
-              href="https://wa.me/521234567890?text=¡Hola!%20Confirmo%20mi%20asistencia%20a%20los%2015%20años%20de%20Astrid."
+              href="https://wa.me/51936603364?text=¡Hola!%20Confirmo%20mi%20asistencia%20a%20los%2015%20años%20de%20Astrid."
               target="_blank"
               rel="noopener"
               class="inline-flex items-center justify-center px-6 py-3 bg-yellow-300 text-gray-900 font-poppins rounded-full space-x-2 hover:bg-yellow-400 transition"
@@ -493,15 +496,16 @@
             </a>
           </div>
         </section>
+        <hr class="border-t-2 border-yellow-300 w-24 mx-auto my-12" />
 
         <!-- Código de Vestimenta -->
         <section
           id="dress-code"
-          class="snap-start min-h-screen relative flex items-center justify-center px-6 bg-dress-bg overflow-hidden"
+          class="snap-start h-screen relative flex items-center justify-center px-6 bg-dress-bg overflow-hidden"
         >
           <!-- Overlay patrón y capa oscura -->
           <div class="absolute inset-0 bg-pattern opacity-10"></div>
-          <div class="absolute inset-0 bg-black opacity-60"></div>
+          <div class="absolute inset-0 bg-black opacity-10"></div>
 
           <!-- Tarjeta central -->
           <div
@@ -580,12 +584,16 @@
             </ul>
           </div>
         </section>
+        <hr class="border-t-2 border-yellow-300 w-24 mx-auto my-12" />
 
         <!-- Galería -->
         <section
           id="gallery"
-          class="snap-start min-h-screen w-full flex flex-col items-center justify-center px-6 overflow-y-auto"
+          class="snap-start h-screen w-full flex flex-col items-center justify-center px-6 overflow-y-auto"
         >
+          <!-- Overlay patrón y capa oscura -->
+          <div class="absolute inset-0 bg-pattern opacity-10"></div>
+          <div class="absolute inset-0 bg-black opacity-10"></div>
           <div class="max-w-4xl w-full mx-auto text-center space-y-6">
             <h2 class="text-3xl font-dancing text-yellow-300">
               Galería de Fotos
@@ -643,15 +651,16 @@
             </button>
           </div>
         </section>
+        <hr class="border-t-2 border-yellow-300 w-24 mx-auto my-12" />
 
         <!-- Palabras de los Padres -->
         <section
           id="parents-words"
-          class="snap-start min-h-screen relative px-6 bg-parents-words-bg flex items-center justify-center overflow-hidden"
+          class="snap-start h-screen relative px-6 bg-parents-words-bg flex items-center justify-center overflow-hidden"
         >
           <!-- Overlay patrón y capa oscura -->
           <div class="absolute inset-0 bg-pattern opacity-10"></div>
-          <div class="absolute inset-0 bg-black opacity-60"></div>
+          <div class="absolute inset-0 bg-black opacity-10"></div>
 
           <!-- Tarjeta de palabras -->
           <div
@@ -738,6 +747,20 @@
         </p>
       </div>
     </footer>
+
+    <!-- Música de fondo, muteada para poder autoplay -->
+    <audio
+      id="bg-music"
+      src="assets/yourebeautiful.mp3"
+      autoplay
+      loop
+      preload="auto"
+    ></audio>
+
+    <!-- Botón de silenciar/activar, empezará mostrando “🔇” -->
+    <button id="music-toggle" class="music-btn" aria-label="Alternar música">
+      🔇
+    </button>
 
     <!-- Modal / Pasarela -->
     <div

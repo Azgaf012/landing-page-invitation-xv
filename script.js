@@ -134,3 +134,21 @@ document.addEventListener("DOMContentLoaded", () => {
   );
   reveals.forEach((el) => observer.observe(el));
 });
+
+// Toggle música de fondo
+const bgMusic      = document.getElementById('bg-music');
+const musicToggle  = document.getElementById('music-toggle');
+
+// 1) Forzar play (al estar muteado, los navegadores lo permiten)
+bgMusic.play().catch(() => {
+  /* si no se permite, no hacer nada */
+});
+
+// 2) Estado inicial del botón según mute
+musicToggle.textContent = bgMusic.muted ? '🔇' : '🔊';
+
+// 3) Toggle mute/unmute al click
+musicToggle.addEventListener('click', () => {
+  bgMusic.muted = !bgMusic.muted;
+  musicToggle.textContent = bgMusic.muted ? '🔇' : '🔊';
+});
